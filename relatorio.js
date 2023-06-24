@@ -1,9 +1,3 @@
-let selectedFiles;
-
-function handleFileSelect(event) {
-    selectedFiles = event.target.files;
-}
-
 function loadFile(url, callback) {
     PizZipUtils.getBinaryContent(url, callback);
 }
@@ -68,7 +62,7 @@ function criarRelatorio(callback) {
 }
 
 function fazerPresenca(callback) {
-    JuntarCsv(selectedFiles, function(cpfs_presenca_marge) {
+    JuntarCsv(DropzonePresenca.files, function(cpfs_presenca_marge) {
         if (cpfs_presenca_marge !== null) {
             cpfs_presente = filtrarPresenca(cpfs_presenca_marge, 2);
             filtrarAlunosPresentes(cpfs_presente, function(alunos_presentes) {
@@ -88,15 +82,14 @@ function fazerPresenca(callback) {
 
 
 function filtrarAlunosPresentes(cpfs_presente, callback) {
-    const fileInput = document.getElementById('inputFile');
 
-    if (fileInput.files.length === 0) {
+    if (DropzoneAlunos.files.length === 0) {
         console.error('Nenhum arquivo selecionado.');
         callback(null);
         return;
     }
 
-    const file = fileInput.files[0];
+    const file = DropzoneAlunos.files[0];
     const reader = new FileReader();
 
     reader.onload = function(event) {
@@ -195,3 +188,15 @@ function getDataAtualFormatada() {
     let dataFormatada = dataAtual.format("DD [de] ") + nomeMes + dataAtual.format(" [de] YYYY");
     return dataFormatada;
 }
+
+Dropzone.autoDiscover = false;
+
+let configDropzone = {
+    addRemoveLinks: true,
+    dictRemoveFile: "Remover arquivo",
+}
+
+DropzonePresenca = new Dropzone("#dropzone-presenca", configDropzone);
+
+configDropzone['maxFiles'] = 1;
+DropzoneAlunos = new Dropzone("#dropzone-alunos", configDropzone);
