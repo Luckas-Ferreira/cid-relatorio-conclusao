@@ -10,7 +10,7 @@ function loadFile(url, callback) {
 
 function gerar(alunos) {
     loadFile(
-        "https://raw.githubusercontent.com/jrobertogram/cvs/main/modeloJS.docx",
+        "https://github.com/jrobertogram/cid-relatorio-conclusao/raw/main/recursos/modeloJS.docx",
         function(error, content) {
             if (error) {
                 throw error;
