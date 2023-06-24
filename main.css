@@ -1,3 +1,7 @@
 #dropzone-presenca, #dropzone-alunos {
     border: 2px dashed #ccc; /* Optional: Add a border */
 }
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bs-primary);
+}
