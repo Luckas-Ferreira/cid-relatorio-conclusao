@@ -2,7 +2,7 @@ function loadFile(url, callback) {
     PizZipUtils.getBinaryContent(url, callback);
 }
 
-function gerar(alunos) {
+function gerar(alunos, curso) {
     loadFile(
         "https://raw.githubusercontent.com/jrobertogram/cvs/main/modeloJS.docx",
         function(error, content) {
@@ -28,15 +28,13 @@ function gerar(alunos) {
             });
 
             doc.render({
-                "curso": "Minicurso de SIEWEB, AVA, SIGAA",
-                "monitor": "José Roberto Da Silva",
-                "ch": "12",
-                "datas": "05, 07 e 09/06/2023",
+                "curso": curso['curso'],
+                "monitor": curso['monitor'],
+                "ch": curso['ch'],
+                "datas": curso['datas'],
                 "data": data,
                 "alunos": alunosDoc
             });
-
-
 
             const blob = doc.getZip().generate({
                 type: "blob",
@@ -52,7 +50,13 @@ function criarRelatorio(callback) {
     fazerPresenca(function(alunos_presentes) {
         if (alunos_presentes !== null) {
 
-            gerar(alunos_presentes)
+            curso = {}
+               
+            curso['curso'] = document.getElementById("nome").value;
+            curso['monitor'] = document.getElementById("monitor").value;
+            curso['ch'] = document.getElementById("ch").value;
+            curso['datas'] = document.getElementById("datas").value;
+            gerar(alunos_presentes, curso)
             //console.log(alunos_presentes);
 
         } else {
@@ -64,7 +68,8 @@ function criarRelatorio(callback) {
 function fazerPresenca(callback) {
     JuntarCsv(DropzonePresenca.files, function(cpfs_presenca_marge) {
         if (cpfs_presenca_marge !== null) {
-            cpfs_presente = filtrarPresenca(cpfs_presenca_marge, 2);
+            presenca = document.getElementById("presenca").value  ?? 0;
+            cpfs_presente = filtrarPresenca(cpfs_presenca_marge, presenca);
             filtrarAlunosPresentes(cpfs_presente, function(alunos_presentes) {
                 if (alunos_presentes !== null) {
                     callback(alunos_presentes);
