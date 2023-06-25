@@ -19,15 +19,25 @@
          ></script>
       <![endif]-->
    </head>
-   <body>
+   <body data-bs-theme="light">
 
       <header>
-         <nav class="navbar p-2 p-3 mb-5" style="background-color: #0752ad;">
+         <nav class="navbar p-2 p-3 mb-5 bg-header">
             <div class="container-fluid">
             <a class="navbar-brand text-light" href="#">
                <img src="recursos/logo.webp" alt="Logo" width="60" height="30" class="d-inline-block align-text-top">
                Centro de Inclusão Digital
             </a>
+            <div class="navbar-brand text-light">
+               <div>
+                  <input type="checkbox" class="checkbox" id="checkbox">
+                  <label for="checkbox" class="checkbox-label bg-checkbox">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <span class="ball"></span>
+                  </label>
+                </div>
+            </div>
             </div>
          </nav>
       </header>
@@ -37,10 +47,10 @@
 
             <div class="row mb-3 g-4">
                <div class="col-12 col-sm-5 col-lg-3">
-                  <form action="#" class="dropzone" id="dropzone-alunos"></form>
+                  <form action="#" class="dropzone bg-dropzone" id="dropzone-alunos"></form>
                </div>
                <div class="col-12 col-sm-7 col-lg-9">
-                  <form action="#" class="dropzone" id="dropzone-presenca"></form>
+                  <form action="#" class="dropzone bg-dropzone" id="dropzone-presenca"></form>
                </div>
             </div>
 
@@ -75,7 +85,7 @@
          </div>
       </div>
 
-      <footer class="text-center text-light" style="background-color: #0752ad; position: fixed; bottom: 0px; width: 100%;">
+      <footer class="text-center text-light bg-footer" style="position: fixed; bottom: 0px; width: 100%;">
          <div class="container pt-4">
             <section class="mb-4">
                <a class="btn btn-link btn-lg text-light m-1" href="mailto:jose.silva9@arapiraca.ufal.br" target="_blank">

@@ -216,3 +216,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 });
+
+const checkbox = document.getElementById("checkbox")
+checkbox.addEventListener("change", () => {
+    if (document.body.getAttribute("data-bs-theme") === "light"){
+        document.body.setAttribute("data-bs-theme", "dark");
+    }else{
+        document.body.setAttribute("data-bs-theme", "light");
+    }
+  
+})

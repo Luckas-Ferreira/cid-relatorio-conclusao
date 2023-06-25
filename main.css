@@ -5,3 +5,74 @@
 .custom-tooltip {
     --bs-tooltip-bg: var(--bs-primary);
 }
+
+.bg-header, .bg-footer{
+    background-color: #0752ad;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .checkbox-label {
+    background-color: #0752ad;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fa-moon {color: #f1c40f;}
+  
+  .fa-sun {color: #f39c12;}
+  
+  .checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+  }
+
+
+[data-bs-theme="dark"] {
+  
+    .bg-header, .bg-footer, .bg-dropzone, .bg-checkbox{
+        --bs-bg-opacity: 1;
+        /*background-color: rgba(var(--bs-secondary-rgb),var(--bs-bg-opacity))!important;*/
+        background-color:#000100  !important;
+    }
+    
+    .btn-primary {
+        --bs-btn-color: #fff;
+        --bs-btn-bg: #000100;
+        --bs-btn-border-color: #6c757d;
+        --bs-btn-hover-color: #fff;
+        --bs-btn-hover-bg: #5c636a;
+        --bs-btn-hover-border-color: #565e64;
+        --bs-btn-focus-shadow-rgb: 130,138,145;
+        --bs-btn-active-color: #fff;
+        --bs-btn-active-bg: #565e64;
+        --bs-btn-active-border-color: #51585e;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #fff;
+        --bs-btn-disabled-bg: #6c757d;
+        --bs-btn-disabled-border-color: #6c757d;
+    }
+
+  }
+
+  
