@@ -1,3 +1,18 @@
+footer{
+    position: fixed; 
+    bottom: 0px;
+    width: 100%; 
+
+    .foo{
+        background-color: rgba(0, 0, 0, 0.2);
+        border-top: solid rgb(74, 91, 144) 1px;
+    }
+
+}
+
+
+
+
 #dropzone-presenca, #dropzone-alunos {
     border: 2px dashed #ccc; /* Optional: Add a border */
 }
@@ -53,12 +68,12 @@
     .bg-header, .bg-footer, .bg-dropzone, .bg-checkbox{
         --bs-bg-opacity: 1;
         /*background-color: rgba(var(--bs-secondary-rgb),var(--bs-bg-opacity))!important;*/
-        background-color:#000100  !important;
+        background-color:#00030a  !important;
     }
     
     .btn-primary {
         --bs-btn-color: #fff;
-        --bs-btn-bg: #000100;
+        --bs-btn-bg: #00030a;
         --bs-btn-border-color: #6c757d;
         --bs-btn-hover-color: #fff;
         --bs-btn-hover-bg: #5c636a;
