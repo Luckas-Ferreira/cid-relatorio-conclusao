@@ -1,3 +1,21 @@
+.Header{
+  height: 73px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  display: flex;
+}
+
+.Section{
+  
+  display:flex;
+  min-height: calc(100vh - 73px - 160px - 10px - 30px); 
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+/* 
 footer{
     position: fixed; 
     bottom: 0px;
@@ -8,7 +26,7 @@ footer{
         border-top: solid rgb(74, 91, 144) 1px;
     }
 
-}
+} */
 
 #dropzone-presenca, #dropzone-alunos {
     border: 2px dashed #ccc; /* Optional: Add a border */
