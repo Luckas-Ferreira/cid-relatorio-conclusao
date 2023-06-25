@@ -198,11 +198,17 @@ Dropzone.autoDiscover = false;
 
 let configDropzone = {
     addRemoveLinks: true,
+    acceptedFiles: "text/csv",
     dictRemoveFile: "Remover arquivo",
+    dictFallbackMessage: "Seu navegador não suporta arrastar e soltar para fazer upload de arquivos.",
+    dictFileTooBig: "O arquivo é muito grande ({{filesize}} MB). Tamanho máximo do arquivo: {{maxFilesize}} MB.",
+    dictInvalidFileType: "Tipo de arquivo inválido. Apenas arquivos CSV são permitidos.",
 }
 
+configDropzone['dictDefaultMessage'] = "Arraste os arquivos CSV das presenças";
 DropzonePresenca = new Dropzone("#dropzone-presenca", configDropzone);
 
+configDropzone['dictDefaultMessage'] = "Arraste o arquivo CSV das incrições";
 configDropzone['maxFiles'] = 1;
 DropzoneAlunos = new Dropzone("#dropzone-alunos", configDropzone);
 
